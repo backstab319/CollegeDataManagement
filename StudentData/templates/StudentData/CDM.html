@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container d-flex flex-column align-items-center">
-        <div class="container-fluid jumbotron">
+        <div class="container-fluid jumbotron text-center">
             <h1>Hello and welcome to College Data Management!</h1>
         </div>
         <div class="container-fluid jumbotron">
@@ -20,7 +20,14 @@
             <p class="text-muted">
                 Please use the following links to manage student and lecturer data.
             </p>
-            <a href="{% url 'StudentData' %}">Student Data</a>
+            <ul class="list-group list-unstyled">
+              <li class="list-tem">
+                <a href="{% url 'studentdata' %}" class="btn btn-outline-primary">Student Data</a>
+              </li>
+              <li class="list-item">
+                The lecturer data management system will be available soon.
+              </li>
+            </ul>
         </div>
     </div>
 

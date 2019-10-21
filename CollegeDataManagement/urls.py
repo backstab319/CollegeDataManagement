@@ -18,7 +18,7 @@ from django.urls import path, include
 from StudentData.views import StudentDataManager as SDM
 
 urlpatterns = [
-    path('', SDM.CDMView, name="CDM"),
     path('StudentData/', include('StudentData.urls')),
+    path('', SDM.CDM, name="index"),
     path('admin/', admin.site.urls),
 ]
