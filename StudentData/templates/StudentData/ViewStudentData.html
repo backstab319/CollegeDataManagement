@@ -11,13 +11,25 @@
         <div class="container-fluid jumbotron text-center">
           <h1>View Student Data</h1>
         </div>
-        {% if a %}
+        {% if data %}
         <div class="container-fluid jumbotron">
-          <h1>A is defined</h1>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th><th>Age</th><th>Address</th>
+                <th>Course</th><th>Number</th>
+              </tr>
+            </thead>
+            <tbody>
+          {% for i in data %}
+            <tr><td>{{ i.name }}</td><td>{{i.age}}</td><td>{{i.address}}</td><td>{{i.course}}</td><td>{{i.phone}}</td></tr>
+          {% endfor %}
+            </tbody>
+          </table>
         </div>
         {% else %}
         <div class="container-fluid jumbotron">
-          <h1>A is not defined</h1>
+          <h1>No student data available. You can add student data from <a class="btn btn-outline-primary" href="{% url 'addstudentdata' %}">here</a></h1>
         </div>
         {% endif %}
     </div>

@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from StudentData.views import StudentDataManager as SDM
+from StudentData.views import CDMPage
 
 urlpatterns = [
     path('StudentData/', include('StudentData.urls')),
-    path('', SDM.CDM, name="index"),
+    path('', CDMPage.as_view(), name="index"),
     path('admin/', admin.site.urls),
 ]
