@@ -18,6 +18,7 @@
               {{ form }}
               {% csrf_token %}
               <input type="submit" value="Update" class="btn btn-outline-primary">
+              <a href="{% url 'deletestudentdata' %}" class='btn btn-outline-primary'>Delete</a>
             </div>
           </form>
         </div>

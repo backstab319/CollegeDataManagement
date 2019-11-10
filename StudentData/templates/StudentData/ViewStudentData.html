@@ -11,18 +11,25 @@
         <div class="container-fluid jumbotron text-center">
           <h1>View Student Data</h1>
         </div>
-        {% if data %}
+        {% if object_list %}
         <div class="container-fluid jumbotron">
           <table class="table">
             <thead>
               <tr>
                 <th>Name</th><th>Age</th><th>Address</th>
-                <th>Course</th><th>Number</th>
+                <th>Course</th><th>Number</th><th>Edit</th>
               </tr>
             </thead>
             <tbody>
-          {% for i in data %}
-            <tr><td>{{ i.name }}</td><td>{{i.age}}</td><td>{{i.address}}</td><td>{{i.course}}</td><td>{{i.phone}}</td></tr>
+          {% for i in object_list %}
+            <tr>
+              <td>{{ i.name }}</td>
+              <td>{{i.age}}</td>
+              <td>{{i.address}}</td>
+              <td>{{i.course}}</td>
+              <td>{{i.phone}}</td>
+              <td><a href="{% url 'editstudentdata' i.pk %}" class='btn btn-outline-primary'>Edit</a></td>
+            </tr>
           {% endfor %}
             </tbody>
           </table>

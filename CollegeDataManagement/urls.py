@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from StudentData.views import CDMPage
+from CDMSignup.views import SelfStudentData, resultPage
 
 urlpatterns = [
+    path('', SelfStudentData.as_view(), name='index'),
     path('StudentData/', include('StudentData.urls')),
-    path('', CDMPage.as_view(), name="index"),
+    path('result/', resultPage.as_view(), name='result'),
+    path('manage/', CDMPage.as_view(), name="cdm"),
     path('admin/', admin.site.urls),
 ]

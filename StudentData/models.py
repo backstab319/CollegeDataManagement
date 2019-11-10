@@ -14,4 +14,4 @@ class StudentData(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("result")
+        return reverse("viewstudentdata")
